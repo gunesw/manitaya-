@@ -1,25 +1,48 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Aşkım ❤️</title>
-<style>
-body{
-background:pink;
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-margin:0;
-font-family:Arial;
-}
-h1{
-color:white;
-font-size:50px;
-text-align:center;
-}
-</style>
-</head>
 <body>
 <h1>Seni Çok Seviyorum Aşkım ❤️</h1>
+  <script>
+function createHeart(){
+    const heart=document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML="❤️";
+
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.fontSize=(20+Math.random()*40)+"px";
+    heart.style.animationDuration=(4+Math.random()*4)+"s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },8000);
+}
+
+setInterval(createHeart,250);
+</script>
+  <style>
+.heart{
+    position:fixed;
+    bottom:-20px;
+    font-size:25px;
+    animation:fly linear forwards;
+}
+@keyframes fly{
+    0%{transform:translateY(0);opacity:1;}
+    100%{transform:translateY(-110vh);opacity:0;}
+}
+</style>
+
+<script>
+function createHeart(){
+    const heart=document.createElement("div");
+    heart.className="heart";
+    heart.innerHTML="❤️";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.animationDuration=(4+Math.random()*4)+"s";
+    document.body.appendChild(heart);
+    setTimeout(()=>heart.remove(),8000);
+}
+setInterval(createHeart,250);
+</script>
 </body>
 </html>
